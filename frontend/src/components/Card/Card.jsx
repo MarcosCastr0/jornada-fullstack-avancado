@@ -1,8 +1,8 @@
 function Card (){
     return(
-        <div className="card mb-5">
+        <div className="card mt-4 mb-1">
             <img
-               src="https://picsum.photos/300/200"
+                src="https://picsum.photos/300/200"
                 className="card-img-top"
                 alt="..."
             />
