@@ -13,6 +13,9 @@ function ItemList() {
         <div className="col-4">
           <Card />
         </div>
+        <div className="col-4">
+          <Card />
+        </div>
       </div>
     </div>
   )
