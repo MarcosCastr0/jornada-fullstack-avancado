@@ -1,23 +1,29 @@
-import MarcaOcean from "../../assets/brand.svg";
-import "./Header.css"
+import MarcaOcean from '../../assets/brand.svg'
+import './header.css'
+import { Link } from 'react-router-dom'
 
-function Header(){
-    return(
-        <header className="cabecalho"> 
-        <div className="container">
-          <div className="row align-items-center">
+function Header() {
+  return (
+    <header className="cabecalho">
+      <div className="container">
+        <div className="row align-items-center">
           <div className="col-2">
-              <img src={MarcaOcean} alt="" style={{ height: 50 }}/>
+            <img src={MarcaOcean} alt="" width={50} />
           </div>
           <div className="col-10">
-              <a className="link">Link 1</a>
-              <a className="link">Link 2</a>
-              <a className="link">Link 3</a>
-          </div>
+            <Link className="link" to="/">
+              {' '}
+              Inicio{' '}
+            </Link>
+            <Link className="link" to="/cadastro">
+              {' '}
+              Cadastro{' '}
+            </Link>
           </div>
         </div>
-        </header>
-    );
+      </div>
+    </header>
+  )
 }
 
-export default  Header
+export default Header

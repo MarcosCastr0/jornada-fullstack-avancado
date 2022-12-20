@@ -1,32 +1,23 @@
-import "./App.css"
-
-import Card from "./components/Card/Card";
-import Header from "./components/Header/Header";
-import Footer from "./components/Footer/Footer";
+import './App.css'
+import Header from './components/header/header'
+import Footer from './components/footer/footer'
+import { Routes, Route } from 'react-router-dom'
+import ItemList from './components/itemList/itemList'
+import Create from './components/create/create'
 
 function App() {
   return (
     <div className="App">
-      <Header/>
-      <div className="content container">
-        <div className="row">
-            <div className="col-4">
-             <Card/>   
-            </div>
-            <div className="col-4">
-             <Card/>   
-            </div>
-            <div className="col-4">
-             <Card/>   
-            </div>
-            <div className="col-4">
-             <Card/>   
-            </div>
-        </div>
+      <Header />
+
+      <Routes>
+        <Route path="/" element={<ItemList />} />
+        <Route path="/cadastro" element={<Create />} />
+      </Routes>
+
+      <Footer />
     </div>
-      <Footer/>
-    </div>
-  );
+  )
 }
 
 export default App
