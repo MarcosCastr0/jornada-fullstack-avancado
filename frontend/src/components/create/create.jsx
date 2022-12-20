@@ -1,9 +1,9 @@
 import API from '../../api/api'
-import { useState } from 'react'
-import { useEffect } from 'react'
+import { useState, useEffect } from 'react'
 
 function Create() {
   const [category, setCategory] = useState([{ _id: 0, name: 'Carregando...' }])
+  
   async function loadCategory() {
     const categoryFromDB = await API.category.list()
     const categoryReaded = await categoryFromDB.json()
@@ -18,7 +18,7 @@ function Create() {
   // Pegar as categorias
   // Cadastrar na variável de estado
 
-  async function cadastraItem (event) {
+  async function cadastraItem(event) {
     event.preventDefault()
 
     const formEl = event.target;
@@ -41,6 +41,7 @@ function Create() {
       alert ("Item Cadastrado com sucesso!!")
       formEl.nome.value = ""
       formEl.url.value = ""
+    }else{
       // Deu errado
       alert ("Aconteceu algo, seu item NÃO foi cadastrado. :(")
     };
@@ -56,7 +57,7 @@ function Create() {
 
       <div className="form-group mt-2">
         <label>Url da Imagem: </label>
-        <input className="form-control" type="text" name="nome" />
+        <input className="form-control" type="url" name="url" />
       </div>
 
       <div className="form-group mt-2">
